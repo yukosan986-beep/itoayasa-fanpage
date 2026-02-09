@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>伊藤彩沙粉丝页（非官方）</title>
+  <style>
+    :root{
+      --bg:#fff7fa;
+      --card:#ffffff;
+      --primary:#f2a7c6;
+      --primary-soft:#f9d6e4;
+      --text:#3a3a3a;
+      --muted:#777;
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, sans-serif;
+      background:linear-gradient(180deg,var(--bg),#fff);
+      color:var(--text);
+    }
+    header{
+      max-width:980px;
+      margin:0 auto;
+      padding:32px 20px 16px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .brand{font-weight:600; font-size:1.4em;}
+    .lang button{
+      background:var(--card);
+      border:1px solid var(--primary-soft);
+      padding:6px 12px;
+      border-radius:999px;
+      cursor:pointer;
+      margin-left:6px;
+      font-size:1em;
+    }
+    .lang button.active{
+      background:var(--primary-soft);
+      border-color:var(--primary);
+    }
+    main{
+      max-width:980px;
+      margin:0 auto;
+      padding:0 20px 60px;
+    }
+    .hero{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:32px 24px;
+      box-shadow:0 8px 24px rgba(0,0,0,.05);
+      margin-bottom:24px;
+    }
+    h1,h2,h3{margin:0 0 12px;}
+    h1{font-size:clamp(28px,5vw,40px);}
+    p{line-height:1.7; margin:0 0 12px;}
+    .muted{color:var(--muted)}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:20px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:24px;
+      border:1px solid #f3e6ec;
+    }
+    ul{line-height:1.8; padding-left:24px; margin:12px 0;}
+    footer{
+      text-align:center;
+      color:var(--muted);
+      font-size:14px;
+      padding:40px 20px;
+    }
+    @media (max-width:600px){
+      .grid{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand" data-i18n="brand">彩沙粉丝页（非官方）</div>
+    <div class="lang">
+      <button onclick="setLang('zh')" id="btn-zh">中</button>
+      <button onclick="setLang('en')" id="btn-en">EN</button>
+      <button onclick="setLang('ja')" id="btn-ja">日</button>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <h1 data-i18n="title">伊藤彩沙 Ayasa Ito</h1>
+      <p class="muted" data-i18n="subtitle">Poppin'Party 键盘手 / 声优 / ピンク大好き♡</p>
+      <p data-i18n="intro">粉丝自制非官方页面。喜欢粉色、活泼可爱的彩沙酱～ 最新消息请以官方为准！</p>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h3 data-i18n="c1t">关于彩沙</h3>
+        <p data-i18n="c1">生日：1996年8月17日<br>出生地：京都<br>血型：O型<br>所属：81produce<br>代表身份：BanG Dream! 市ヶ谷有咲（Arisa）</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="c2t">代表作品</h3>
+        <p data-i18n="c2">BanG Dream!（有咲）<br>Revue Starlight（花柳香子）<br>魔法少女奈叶系列（2026新作）<br>魔王的女女儿太温柔了!!（莎蒂）等</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="c3t">官方链接</h3>
+        <p data-i18n="c3">
+          X（Twitter）：@ayasa_ito<br>
+          Instagram：ayasacream<br>
+          事务所：81produce<br>
+          <small>本页为粉丝非官方制作，仅供喜爱参考</small>
+        </p>
+      </div>
+    </section>
+
+    <section class="hero" style="margin-top:24px">
+      <h2 data-i18n="newsTitle">近期活动（2026年2月更新）</h2>
+      <ul class="muted">
+        <li>2026-04-12｜BanG Dream! Special LIVE in TAIPEI DAY2（Poppin'Party × Roselia）</li>
+        <li>2026-02-28｜BanG Dream! 10th Anniversary LIVE @ Kアリーナ横浜</li>
+        <li>2026-07（予定）｜《魔法少女奈叶 EXCEEDS Gun Blaze Vengeance》播出</li>
+        <li>持续更新中… 请关注 @ayasa_ito 获取一手消息♡</li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <span data-i18n="footer">© 2026 非官方粉丝页 | Made with love for Ayasa</span>
+  </footer>
+
+<script>
+  const dict = {
+    zh:{
+      brand:"彩沙粉丝页（非官方）",
+      title:"伊藤彩沙 Ayasa Ito",
+      subtitle:"Poppin'Party 键盘手 / 声优 / 粉色爱好者♡",
+      intro:"粉丝自制页面。活泼可爱又温柔的彩沙酱～ 一切以官方信息为准！",
+      c1t:"关于彩沙",
+      c1:"生日：1996年8月17日\n出生地：京都\n血型：O型\n所属：81produce\n代表身份：BanG Dream! 市ヶ谷有咲",
+      c2t:"代表作品",
+      c2:"BanG Dream!（有咲）\nRevue Starlight（香子）\n魔法少女奈叶新作（2026）\n魔王的女女儿太温柔了!! 等",
+      c3t:"官方链接",
+      c3:"X：@ayasa_ito\nInstagram：ayasacream\n事务所：81produce\n（本页非官方，仅供参考）",
+      newsTitle:"近期活动（粉丝整理）",
+      footer:"© 2026 非官方粉丝页 | Made with love for Ayasa"
+    },
+    en:{
+      brand:"Ayasa Fan Page (Unofficial)",
+      title:"Ayasa Ito",
+      subtitle:"Poppin'Party Keyboardist / Voice Actress",
+      intro:"Unofficial fan page for the lovely Ayasa ♡ Always check official sources!",
+      c1t:"About Ayasa",
+      c1:"Birthday: Aug 17, 1996\nFrom: Kyoto\nBlood Type: O\nAgency: 81produce\nKnown as: Arisa Ichigaya in BanG Dream!",
+      c2t:"Notable Works",
+      c2:"BanG Dream! (Arisa)\nRevue Starlight\nMagical Girl Lyrical Nanoha (2026)\netc.",
+      c3t:"Official Links",
+      c3:"X: @ayasa_ito\nInstagram: ayasacream\nAgency: 81produce\n(This is unofficial fan page)",
+      newsTitle:"Recent Activities",
+      footer:"© 2026 Unofficial Fan Page"
+    },
+    ja:{
+      brand:"彩沙ファン頁（非公式）",
+      title:"伊藤彩沙",
+      subtitle:"Poppin'Party キーボード / 声優",
+      intro:"非公式ファン頁♡ ピンク大好き彩沙ちゃんを応援！",
+      c1t:"彩沙について",
+      c1:"誕生日：1996.8.17\n出身：京都\n血液型：O型\n所属：81produce",
+      c2t:"主な出演",
+      c2:"BanG Dream!（市ヶ谷有咲）\n少女☆歌劇 レヴュースタァライト\n魔法少女リリカルなのは (2026新作)\nなど",
+      c3t:"公式リンク",
+      c3:"X：@ayasa_ito\nInstagram：ayasacream\n事務所：81produce\n（非公式ファン頁です）",
+      newsTitle:"最近の活動",
+      footer:"© 2026 非公式ファン頁"
+    }
+  };
+
+  function setLang(l){
+    document.documentElement.lang = l;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (dict[l][key]) el.textContent = dict[l][key];
+    });
+    ['zh','en','ja'].forEach(x => {
+      const btn = document.getElementById('btn-'+x);
+      if (btn) btn.classList.toggle('active', x===l);
+    });
+    localStorage.setItem('lang', l);
+  }
+
+  setLang(localStorage.getItem('lang') || 'zh');
+</script>
+</body>
+</html>
