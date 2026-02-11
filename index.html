@@ -139,7 +139,12 @@
  
   <!-- 用 div 包 iframe，便于加 CSS 覆盖 -->
   <div class="calendar-wrapper" style="background: var(--bg); border-radius: var(--radius); padding: 16px; border: 2px solid var(--primary-soft); overflow: hidden;">
-    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FTokyo&showPrint=0&src=ODNlMWM1NzM5Y2Q1Y2VhZDhlMjM1MDhhMmE4MmQyOWUwNjNkMDBkNWJlOGFiNGIyMGI0YjAyODA1YmIwNjM5YUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23d81b60" style="border:solid 1px #777" width="100%" height="600" frameborder="0" scrolling="no"></iframe>  <!-- 这里把 width="725" 改成 "100%" -->
+    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FTokyo&showPrint=0&src=ODNlMWM1NzM5Y2Q1Y2VhZDhlMjM1MDhhMmE4MmQyOWUwNjNkMDBkNWJlOGFiNGIyMGI0YjAyODA1YmIwNjM5YUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23d81b60" style="border:solid 1px #777" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+    
+    <!-- 新加的全屏按钮，就在这里，iframe 下面 -->
+    <button onclick="document.querySelector('.calendar-wrapper iframe').requestFullscreen()" style="background:var(--primary); color:white; border:none; padding:10px 20px; border-radius:8px; margin:16px auto 0; display:block; cursor:pointer; font-size:1em;">
+      全屏查看日历
+    </button>
   </div>
  
   <p class="muted" style="margin-top:16px;">关注官方 X：<a href="https://x.com/ayasa_ito" target="_blank">@ayasa_ito</a></p>
@@ -155,7 +160,7 @@
     </section>
   </main>
   <footer>
-    © 2026 非官方粉丝页
+    © 2026 非官方粉丝页 最后更新：2026年2月12日
   </footer>
 </body>
 </html>
